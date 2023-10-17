@@ -68,6 +68,11 @@ class OpenAIAgent(conversation.AbstractConversationAgent):
         self.history: dict[str, str] = {}
 
     @property
+    def supported_languages(self) -> list[str] | Literal["*"]:
+        """Return a list of supported languages."""
+        return MATCH_ALL
+
+    @property
     def attribution(self):
         """Return the attribution."""
         return {"name": "Powered by OpenAI", "url": "https://www.openai.com"}
